@@ -123,21 +123,25 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.action_edit){
-            val intent = Intent(this, EditActivity::class.java)
-            with(intent) {
-                putExtra(getString(R.string.key_image), imgUri.toString())
-                putExtra(getString(R.string.key_name), binding.tvName.text)
-                putExtra(getString(R.string.key_email), binding.tvEmail.text.toString())
-                putExtra(getString(R.string.key_website), binding.tvWebsite.text.toString())
-                putExtra(getString(R.string.key_phone), binding.tvPhone.text)
-                putExtra(getString(R.string.key_latitude), lat)
-                putExtra(getString(R.string.key_logitude), long)
-            }
+        when(item.itemId){
+            R.id.action_edit->{
+                val intent = Intent(this, EditActivity::class.java)
+                with(intent) {
+                    putExtra(getString(R.string.key_image), imgUri.toString())
+                    putExtra(getString(R.string.key_name), binding.tvName.text)
+                    putExtra(getString(R.string.key_email), binding.tvEmail.text.toString())
+                    putExtra(getString(R.string.key_website), binding.tvWebsite.text.toString())
+                    putExtra(getString(R.string.key_phone), binding.tvPhone.text)
+                    putExtra(getString(R.string.key_latitude), lat)
+                    putExtra(getString(R.string.key_logitude), long)
+                }
 
-            //startActivity(intent) <- solo lanzamiento
-            startActivityForResult(intent, RC_EDIT) // <- lanzamiento y espera de respuesta
+                //startActivity(intent) <- solo lanzamiento
+                startActivityForResult(intent, RC_EDIT) // <- lanzamiento y espera de respuesta
+            }
+            R.id.action_settings -> startActivity(Intent(this, SettingsActivity::class.java))
         }
+
         return super.onOptionsItemSelected(item)
     }
 

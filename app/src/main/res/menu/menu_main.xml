@@ -9,6 +9,6 @@
 
     <item
         android:id="@+id/action_settings"
-        android:title="@string/configuración"
+        android:title="@string/settings_title"
         app:showAsAction="never"/>
 </menu>
