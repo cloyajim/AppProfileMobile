@@ -23,4 +23,23 @@
     <string name="profile_error_no_resolve">No se econtró un app compatible</string>
     <string name="key_image">k_image</string>
     <string name="settings_title">Configuración</string>
+    <string name="preferences_touch_title">Touch</string>
+    <string name="preferences_eneable_clicks">Habilitar clicks</string>
+    <string name="preferences_key_eneable_clicks">pref_eneable_clicks</string>
+    <string name="preferences_data_title">Datos</string>
+    <string name="preferences_delete_data">Eliminar datos de usuario</string>
+    <string name="preferences_key_delete_data">pref_delete_data</string>
+    <string name="preferences_restore_data">"Restaurar datos y configuraciones "</string>
+    <string name="preferences_key_restore_data">pref_restore_data</string>
+
+    <string name="preferences_img_size_small">Chica</string>
+    <string name="preferences_img_size_medium">Mediana</string>
+    <string name="preferences_img_size_large">Grande</string>
+    <string name="preferences_img_key_size_small">pref_small</string>
+    <string name="preferences_img_key_size_medium">pref_medium</string>
+    <string name="preferences_img_key_size_large">pref_large</string>
+    <string name="preferences_ui_title">Interfaz</string>
+    <string name="preferences_iu_img_size">Tamaño de la imegen</string>
+    <string name="preferences_key_iu_img_size">pref_ui_img_size</string>
+
 </resources>

@@ -32,9 +32,28 @@ class MainActivity : AppCompatActivity() {
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
 
+
         //updateUI()
         getUserData()
         setupIntents()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val isEnabled = sharedPreferences.getBoolean(
+            getString(R.string.preferences_key_eneable_clicks),
+            true
+        )
+
+        with(binding) {
+            tvName.isEnabled = isEnabled
+            tvEmail.isEnabled = isEnabled
+            tvWebsite.isEnabled = isEnabled
+            tvPhone.isEnabled = isEnabled
+            tvLocation.isEnabled = isEnabled
+            tvSettings.isEnabled = isEnabled
+        }
+
     }
 
     private fun setupIntents() {
