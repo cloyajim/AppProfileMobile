@@ -12,6 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
+import androidx.core.view.updateLayoutParams
 import androidx.preference.PreferenceManager
 import com.cursosandroidant.profile.databinding.ActivityMainBinding
 
@@ -40,11 +41,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+
+        refreshSettingsPreferences()
+    }
+
+    private fun refreshSettingsPreferences(){
         val isEnabled = sharedPreferences.getBoolean(
             getString(R.string.preferences_key_eneable_clicks),
             true
         )
-
         with(binding) {
             tvName.isEnabled = isEnabled
             tvEmail.isEnabled = isEnabled
@@ -52,6 +57,25 @@ class MainActivity : AppCompatActivity() {
             tvPhone.isEnabled = isEnabled
             tvLocation.isEnabled = isEnabled
             tvSettings.isEnabled = isEnabled
+        }
+
+        val imgSize = sharedPreferences.getString(getString(R.string.preferences_key_iu_img_size),
+            "")
+        val sizeValue = when(imgSize){
+            getString(R.string.preferences_img_key_size_small) -> {
+                resources.getDimensionPixelSize(R.dimen.profile_image_size_small)
+            }
+            getString(R.string.preferences_img_key_size_medium) -> {
+                resources.getDimensionPixelSize(R.dimen.profile_image_size_medium)
+            }
+            else -> {
+                resources.getDimensionPixelSize(R.dimen.profile_image_size_large)
+            }
+        }
+
+        binding.imgProfile.updateLayoutParams {
+            width = sizeValue
+            height = sizeValue
         }
 
     }
