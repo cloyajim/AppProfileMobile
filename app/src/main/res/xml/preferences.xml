@@ -29,4 +29,11 @@
             app:key="@string/preferences_key_restore_data"/>
 
     </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="@string/preference_ui_settings">
+        <Preference
+            app:title="@string/preferences_restore_settings"
+            app:key="@string/preferences_key_restore_settings"/>
+    </PreferenceCategory>
 </PreferenceScreen>
