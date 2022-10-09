@@ -31,7 +31,6 @@
         android:theme="@style/Theme.Profile">
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/settings_title"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
