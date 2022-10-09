@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
     private var lat: Double = 0.0
     private var long: Double = 0.0
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -43,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
 
         refreshSettingsPreferences()
+
     }
 
     private fun refreshSettingsPreferences(){
@@ -78,6 +78,7 @@ class MainActivity : AppCompatActivity() {
             height = sizeValue
         }
 
+        getUserData()
     }
 
     private fun setupIntents() {

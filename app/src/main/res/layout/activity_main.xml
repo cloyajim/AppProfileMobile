@@ -24,7 +24,7 @@
                 android:id="@+id/imgProfile"
                 android:layout_width="@dimen/profile_image_size_large"
                 android:layout_height="@dimen/profile_image_size_large"
-                android:src="@drawable/cursos_android_ant"
+                android:src="@drawable/cursos_android_profile"
                 android:scaleType="centerCrop"/>
         </androidx.cardview.widget.CardView>
 
